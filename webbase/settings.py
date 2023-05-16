@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'webbase.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "djangodb",
+        "NAME": "webamindb",
         "USER": "postgres",
         "PASSWORD": "admin@1234",
         "HOST": "127.0.0.1",

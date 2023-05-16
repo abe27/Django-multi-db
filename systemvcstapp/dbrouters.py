@@ -35,35 +35,32 @@ class DBRouter:
 
         return "default"
 
-    def allow_relation(self, obj1, obj2, **hints):
-        """
-        Allow relations if a model in the auth or contenttypes apps is
-        involved.
-        """
-        # if (
-        #     obj1._meta.app_label in self.route_app_labels
-        #     or obj2._meta.app_label in self.route_app_labels
-        # ):
-        #     return True
+    # def allow_relation(self, obj1, obj2, **hints):
+    #     """
+    #     Allow relations if a model in the auth or contenttypes apps is
+    #     involved.
+    #     """
+    #     # if (
+    #     #     obj1._meta.app_label in self.route_app_labels
+    #     #     or obj2._meta.app_label in self.route_app_labels
+    #     # ):
+    #     #     return True
 
-        if (
-            obj1._meta.app_label == "systemvcstapp"
-            or obj2._meta.app_label == "systemvcstapp"
-        ):
-            return True
+    #     if (
+    #         obj1._meta.app_label == "systemvcstapp"
+    #         or obj2._meta.app_label == "systemvcstapp"
+    #     ):
+    #         return True
 
-        return False
+    #     return False
 
-    def allow_migrate(self, db, app_label, model_name=None, **hints):
-        """
-        Make sure the auth and contenttypes apps only appear in the
-        'auth_db' database.
-        """
-        # if app_label in self.route_app_labels:
-        #     return db == "auth_db"
-        # return None
+    # def allow_migrate(self, db, app_label, model_name=None, **hints):
+    #     """
+    #     Make sure the auth and contenttypes apps only appear in the
+    #     'auth_db' database.
+    #     """
+    #     # if app_label in self.route_app_labels:
+    #     #     return db == "auth_db"
+    #     # return None
 
-        if app_label == "systemvcstapp":
-            return None
-
-        return "default"
+    #     return None
